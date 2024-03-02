@@ -23,8 +23,10 @@ public class ArrowController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        hasHit = true;
-        rb.velocity = Vector2.zero;
-        rb.isKinematic = true;
+        if(other.gameObject.tag != "CanHit"){
+            hasHit = true;
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+        }
     }
 }
