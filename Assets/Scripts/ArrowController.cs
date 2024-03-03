@@ -7,10 +7,12 @@ public class ArrowController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool hasHit;
+    private ShakeObject shaker;
     
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        shaker = GetComponent<ShakeObject>();
     }
 
     private void Update()
@@ -30,6 +32,7 @@ public class ArrowController : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
             rb.gravityScale = 0.0f;
+            shaker.Shake(0.3f,0.1f);
         }
     }
 }

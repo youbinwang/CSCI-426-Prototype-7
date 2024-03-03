@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     {
         totalScores = new List<TargetController.TargetFace[]>();
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
         scores = new TargetController.TargetFace[3];
     }
 
