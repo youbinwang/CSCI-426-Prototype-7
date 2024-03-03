@@ -6,7 +6,7 @@ public class GravitySource : MonoBehaviour
 {
     [SerializeField]
     private Transform origin;
-    private float gravityStrength = 2.0f;
+    public float gravityStrength = 2.0f;
     private List<Collider2D> arrows;
     void Start(){
         arrows = new List<Collider2D>();
