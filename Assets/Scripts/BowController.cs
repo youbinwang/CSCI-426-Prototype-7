@@ -20,8 +20,11 @@ public class BowController : MonoBehaviour
 
     private bool isPressing = false;
 
+    public static int numShot;
+
     private void Start()
     {
+        numShot = 0;
         for (int i = 0; i < maxNumberOfPoints; i++)
         {
             GameObject newPoint = Instantiate(point, shotPoint.position, Quaternion.identity);
@@ -82,6 +85,7 @@ public class BowController : MonoBehaviour
         GameObject newArrow = Instantiate(arrow, shotPoint.position, shotPoint.rotation);
         newArrow.GetComponent<Rigidbody2D>().velocity = transform.right * currentLaunchForce;
         currentLaunchForce = launchForce;
+        numShot++;
     }
 
     Vector2 PointPosition(float t)

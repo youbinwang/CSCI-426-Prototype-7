@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    public enum TargetFace{Gold, Red, Blue, Black, White}
+    public enum TargetFace{Miss, Gold, Red, Blue, Black, White}
     [SerializeField]
     private TargetFace myScore;
 
