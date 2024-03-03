@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
+    private List<TargetController.TargetFace[]> totalScores;
     private TargetController.TargetFace[] scores;
     // Start is called before the first frame update
     void Start()
     {
+        totalScores = new List<TargetController.TargetFace[]>();
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
         scores = new TargetController.TargetFace[3];
     }
 
@@ -20,9 +24,9 @@ public class ScoreManager : MonoBehaviour
     }
     public void Score(TargetController.TargetFace score){
         scores[BowController.numShot-1] = score;
-        Debug.Log("You got " + score);
-        for(int i = 0;i<scores.Length;i++){
-            Debug.Log(scores[i]);
+        if(BowController.numShot >= 4){
+            totalScores.Add(scores);
+            //Load next scene.
         }
     }
 
