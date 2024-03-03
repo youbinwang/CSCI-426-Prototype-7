@@ -27,6 +27,7 @@ public class ArrowController : MonoBehaviour
             hasHit = true;
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
+            rb.gravityScale = 0.0f;
         }
     }
 }
