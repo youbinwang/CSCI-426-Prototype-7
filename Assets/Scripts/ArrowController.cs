@@ -9,9 +9,13 @@ public class ArrowController : MonoBehaviour
     private bool hasHit;
     private ShakeObject shaker;
     
+    public AudioClip arrowHit;
+    private AudioSource audiosource;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audiosource = GetComponent<AudioSource>();
         shaker = GetComponent<ShakeObject>();
     }
 
@@ -29,6 +33,7 @@ public class ArrowController : MonoBehaviour
         if(other.gameObject.tag != "CanHit")
         {
             hasHit = true;
+            audiosource.PlayOneShot(arrowHit);
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
             rb.gravityScale = 0.0f;

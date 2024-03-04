@@ -19,11 +19,19 @@ public class BowController : MonoBehaviour
     private Vector2 direction;
 
     private bool isPressing = false;
-
+    private bool hasPlayedBowUsingSound = false;
     public static int numShot;
 
+    public AudioClip bowUsing;
+    public AudioClip bowShoot;
+    private AudioSource audiosource;
+    
+    
     private void Start()
     {
+
+        audiosource = GetComponent<AudioSource>();
+        
         numShot = 0;
         for (int i = 0; i < maxNumberOfPoints; i++)
         {
@@ -44,6 +52,11 @@ public class BowController : MonoBehaviour
         {
             isPressing = true;
             currentLaunchForce = launchForce;
+            if (!hasPlayedBowUsingSound)
+            {
+                audiosource.PlayOneShot(bowUsing);
+                hasPlayedBowUsingSound = true;
+            }
         }
 
         if (isPressing)
@@ -73,6 +86,7 @@ public class BowController : MonoBehaviour
         {
             Shoot();
             isPressing = false;
+            hasPlayedBowUsingSound = false;
             foreach (var point in points)
             {
                 point.SetActive(false);
@@ -86,6 +100,8 @@ public class BowController : MonoBehaviour
         newArrow.GetComponent<Rigidbody2D>().velocity = transform.right * currentLaunchForce;
         currentLaunchForce = launchForce;
         numShot++;
+        
+        audiosource.PlayOneShot(bowShoot);
     }
 
     Vector2 PointPosition(float t)

@@ -11,6 +11,9 @@ public class TeleportController : MonoBehaviour
     private Transform sourceParticlesObject;
     private ParticleSystem sourceParticles;
     private ParticleSystem targetParticles;
+
+    private AudioSource audioSource;
+    public AudioClip teleportClip;
     
     // void Start(){
     //     float degree = Mathf.Deg2Rad * Quaternion.Angle(target.rotation, transform.rotation);
@@ -29,9 +32,12 @@ public class TeleportController : MonoBehaviour
         sourceParticlesObject = teleportOrigin.GetChild(1);
         sourceParticles = sourceParticlesObject.GetComponent<ParticleSystem>();
         targetParticles = teleportTarget.GetChild(1).GetComponent<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
+        audioSource.PlayOneShot(teleportClip);
+        
         Rigidbody2D arrowRigidbody = collider.attachedRigidbody;
 
         if (arrowRigidbody != null)

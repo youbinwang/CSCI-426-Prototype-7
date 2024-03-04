@@ -11,11 +11,17 @@ public class TargetController : MonoBehaviour
     private Color myColor;
     public ScenesManager scenesManager;
     
+    public AudioClip arrowScore;
+    private AudioSource audiosource;
+    
     void Start(){
         myRenderer = GetComponent<SpriteRenderer>();
         myColor = myRenderer.color;
+        audiosource = GetComponent<AudioSource>();
     }
     void OnCollisionEnter2D(Collision2D collision){
+        
+        audiosource.PlayOneShot(arrowScore);
         StartCoroutine(Flash());
         ScoreManager.instance.Score(myScore);
         

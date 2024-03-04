@@ -8,11 +8,19 @@ public class GravitySource : MonoBehaviour
     private Transform origin;
     public float gravityStrength = 2.0f;
     private List<Collider2D> arrows;
+
+    private AudioSource audioSource;
+    public AudioClip gravityClip;
+    
     void Start(){
         arrows = new List<Collider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
-    void OnTriggerEnter2D(Collider2D collider){
-        if(collider.gameObject.tag == "Arrow"){
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Arrow")
+        {
+            audioSource.PlayOneShot(gravityClip);
             arrows.Add(collider);
         }
     }
