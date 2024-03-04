@@ -9,6 +9,8 @@ public class TargetController : MonoBehaviour
     private TargetFace myScore;
     private SpriteRenderer myRenderer;
     private Color myColor;
+    public ScenesManager scenesManager;
+    
     void Start(){
         myRenderer = GetComponent<SpriteRenderer>();
         myColor = myRenderer.color;
@@ -16,6 +18,7 @@ public class TargetController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         StartCoroutine(Flash());
         ScoreManager.instance.Score(myScore);
+        
     }
     IEnumerator Flash(){
         for(int i = 0;i<3;i++){
@@ -24,5 +27,6 @@ public class TargetController : MonoBehaviour
             myRenderer.color = myColor;
             yield return new WaitForSeconds(0.2f);
         }
+        scenesManager.LoadNextScene();
     }
 }

@@ -161,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 35399170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8187597, y: 1.4268621, z: -0.03371544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,6 +200,50 @@ Transform:
   - {fileID: 1713124917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &169150530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169150531}
+  - component: {fileID: 169150532}
+  m_Layer: 0
+  m_Name: ScenesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &169150531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169150530}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169150532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169150530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0235fef50d5cf44fba6b29601cfdbfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &325815045
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 0
+  scenesManager: {fileID: 169150532}
 --- !u!61 &325815048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -528,6 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 5
+  scenesManager: {fileID: 169150532}
 --- !u!61 &587377023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -754,6 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 4
+  scenesManager: {fileID: 169150532}
 --- !u!61 &817516020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1028,6 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 4
+  scenesManager: {fileID: 169150532}
 --- !u!61 &1214397067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1172,6 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 3
+  scenesManager: {fileID: 169150532}
 --- !u!61 &1241796282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1347,6 +1396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 0
+  scenesManager: {fileID: 169150532}
 --- !u!61 &1460227542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1680,6 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 0
+  scenesManager: {fileID: 169150532}
 --- !u!61 &1901889887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1864,6 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 5
+  scenesManager: {fileID: 169150532}
 --- !u!61 &2067199855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2008,6 +2060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myScore: 3
+  scenesManager: {fileID: 169150532}
 --- !u!61 &2096845088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2147,3 +2200,4 @@ SceneRoots:
   - {fileID: 2145040851}
   - {fileID: 1955698236}
   - {fileID: 35399172}
+  - {fileID: 169150531}
